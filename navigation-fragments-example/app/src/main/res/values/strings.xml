@@ -1,0 +1,37 @@
+<resources>
+    <string name="open_box">Open Box</string>
+    <string name="options">Options</string>
+    <string name="exit">Exit</string>
+    <string name="about">About</string>
+    <string name="about_the_application">About the Application</string>
+    <string name="application_name">Application Name:</string>
+    <string name="version_name">Version Name:</string>
+    <string name="version_code">Version Code:</string>
+    <string name="fragment_navigation_example">Fragment Navigation Example</string>
+    <string name="box">Box</string>
+    <string name="select_box">Select Box</string>
+    <string name="select_boxes_number">Select the number of boxes:</string>
+    <string name="confirm">Confirm</string>
+    <string name="enable_timer">Enable timer</string>
+    <string name="cancel">Cancel</string>
+    <string name="please_select_a_box">Please select a box</string>
+    <string name="box_title">Box #%1$d</string>
+    <string name="empty_box">This box is empty. Try another one.</string>
+    <string name="to_main_menu">To Main Menu</string>
+    <string name="timer_value">Timer: %1$d sec.</string>
+    <string name="the_end">The end</string>
+    <string name="timer_end_message">Oops, there is no enough time, try again later.</string>
+    <string name="done">Done</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="done_icon">Done icon</string>
+
+    <plurals name="boxes">
+        <item quantity="zero">%1$d boxes</item>
+        <item quantity="one">%1$d box</item>
+        <item quantity="two">%1$d boxes</item>
+        <item quantity="few">%1$d boxes</item>
+        <item quantity="many">%1$d boxes</item>
+        <item quantity="other">%1$d boxes</item>
+    </plurals>
+
+</resources>
