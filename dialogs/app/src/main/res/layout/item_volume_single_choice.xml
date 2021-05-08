@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ua.cn.stu.dialogs.CheckableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/volumeValueTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:textSize="14sp"
+        android:textColor="@color/purple_700"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/radioButton"
+        app:layout_constraintTop_toTopOf="@id/radioButton"
+        app:layout_constraintBottom_toTopOf="@id/volumeLevelLabelTextView"
+        tools:text="65%"/>
+
+    <TextView
+        android:id="@+id/volumeLevelLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/level"
+        app:layout_constraintTop_toBottomOf="@id/volumeValueTextView"
+        app:layout_constraintStart_toStartOf="@id/volumeValueTextView" />
+
+    <ProgressBar
+        android:id="@+id/volumeValueProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        tools:progress="50"
+        app:layout_constraintStart_toEndOf="@id/volumeLevelLabelTextView"
+        app:layout_constraintBottom_toBottomOf="@id/volumeLevelLabelTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</ua.cn.stu.dialogs.CheckableLayout>
