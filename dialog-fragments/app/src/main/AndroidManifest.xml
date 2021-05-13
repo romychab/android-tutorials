@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ua.cn.stu.dialogs">
+    package="ua.cn.stu.dialogfragments">
 
     <application
         android:allowBackup="true"

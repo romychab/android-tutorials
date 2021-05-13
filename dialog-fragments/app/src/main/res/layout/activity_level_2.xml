@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        android:paddingTop="@dimen/default_padding"
+        tools:context=".DialogsLevel1Activity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:textSize="28sp"
+            android:text="@string/alert_dialog_level_2"/>
+
+        <Button
+            android:id="@+id/showCustomAlertDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_custom_view"/>
+
+        <Button
+            android:id="@+id/showCustomSingleChoiceAlertDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_single_choice_custom"/>
+
+        <Button
+            android:id="@+id/showInputAlertDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/alert_dialog_input_and_validation"/>
+        <Button
+            android:id="@+id/showInputAlertDialog2Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_input_and_validation_2"/>
+
+        <TextView
+            android:id="@+id/currentVolume1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            tools:text="Current Volume 1: 50%"/>
+
+        <TextView
+            android:id="@+id/currentVolume2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp"
+            tools:text="Current Volume 2: 50%"/>
+
+    </LinearLayout>
+
+</ScrollView>

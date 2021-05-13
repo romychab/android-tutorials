@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Dialog Fragments</string>
+
+    <string name="default_alert_title">Alert Dialog Title</string>
+    <string name="default_alert_message">Would you like to uninstall Android?</string>
+
+    <string name="action_yes">Yes</string>
+    <string name="action_no">No</string>
+    <string name="action_ignore">Ignore</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_close">Close</string>
+    <string name="dialog_cancelled">Dialog cancelled!</string>
+    <string name="current_volume">Current Volume: %1$d%%</string>
+    <string name="current_volume_1">Current Volume 1: %1$d%%</string>
+    <string name="current_volume_2">Current Volume 2: %1$d%%</string>
+    <string name="volume_description">Volume: %1$d%%</string>
+
+    <string name="uninstall_confirmed">Yeah! Your Android will be removed soon</string>
+    <string name="uninstall_rejected">No no no…</string>
+    <string name="uninstall_ignored">Ignored</string>
+    <string name="volume_setup">Volume setup</string>
+    <string name="volume_setup_message">Please specify the desired volume</string>
+    <string name="level">Level:</string>
+
+    <string name="choose_level">Dialog Fragment\nChoose your level</string>
+    <string name="level_1">Level 1</string>
+    <string name="level_2">Level 2</string>
+    <string name="exit">Exit</string>
+    <string name="alert_dialog_level_1">Dialog Fragment, level 1</string>
+    <string name="alert_dialog_default">Dialog Fragment (default)</string>
+    <string name="alert_dialog_single_choice">Dialog Fragment (single choice)</string>
+    <string name="alert_dialog_single_choice_with_confirmation">Dialog Fragment (single choice with confirmation)</string>
+    <string name="alert_dialog_multiple_choice">Dialog Fragment (multiple choice)</string>
+    <string name="alert_dialog_multiple_choice_with_confirmation">Dialog Fragment (multiple choice with confirmation)</string>
+    <string name="current_color">Current Color:</string>
+    <string name="alert_dialog_level_2">Dialog Fragment, level 2</string>
+    <string name="alert_dialog_custom_view">Dialog Fragment (custom view)</string>
+    <string name="alert_dialog_single_choice_custom">Dialog Fragment (single choice, custom)</string>
+    <string name="alert_dialog_input_and_validation">Dialog Fragment (input and validation)</string>
+    <string name="alert_dialog_input_and_validation_2">Dialog Fragment (input and validation #2)</string>
+    <string name="enter_volume">Enter volume</string>
+    <string name="empty_value">Value is empty</string>
+    <string name="invalid_value">Invalid value</string>
+
+    <string-array name="colors">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+    </string-array>
+</resources>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/default_padding"
+        android:paddingEnd="@dimen/default_padding"
+        android:paddingTop="@dimen/default_padding"
+        android:paddingBottom="@dimen/default_padding"
+        tools:context=".DialogsLevel1Activity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:textSize="28sp"
+            android:text="@string/alert_dialog_level_1"/>
+
+        <Button
+            android:id="@+id/showDefaultAlertDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/alert_dialog_default"/>
+
+        <Button
+            android:id="@+id/showSingleChoiceAlertDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_single_choice"/>
+
+        <Button
+            android:id="@+id/showSingleChoiceWithConfirmationAlertDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_single_choice_with_confirmation"/>
+
+        <Button
+            android:id="@+id/showMultipleChoiceAlertDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_multiple_choice"/>
+
+        <Button
+            android:id="@+id/showMultipleChoiceWithConfirmationAlertDialogButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_multiple_choice_with_confirmation"/>
+
+        <TextView
+            android:id="@+id/currentVolumeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            tools:text="Current Volume: 50%"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="32dp">
+
+            <TextView
+                android:id="@+id/currentColorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:fontFamily="casual"
+                android:textSize="16sp"
+                android:text="@string/current_color"/>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@android:color/black"
+                android:padding="2dp">
+
+                <View
+                    android:id="@+id/colorView"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    tools:background="#00ff00"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
