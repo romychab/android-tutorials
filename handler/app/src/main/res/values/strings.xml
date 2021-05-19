@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Handler</string>
+    <string name="post_to_main_thread">Post to Main Thread:</string>
+    <string name="enable_disable_button">Enable/Disable Button</string>
+    <string name="random_color">Random Color</string>
+    <string name="post_delayed">Post delayed (2 sec.)</string>
+    <string name="post_delayed_with_token">Post delayed with token (2 sec.)</string>
+    <string name="cancel">Cancel</string>
+    <string name="test_button">Test Button</string>
+    <string name="show_toast">Show Toast</string>
+    <string name="hello">Hello</string>
+    <string name="handler_level_1">Handler, level 1</string>
+    <string name="handler_level_2">Handler, level 2</string>
+    <string name="level1">Level 1</string>
+    <string name="level2">Level 2</string>
+
+    <plurals name="seconds">
+        <item quantity="zero">%1$d seconds</item>
+        <item quantity="one">%1$d second</item>
+        <item quantity="two">%1$d seconds</item>
+        <item quantity="few">%1$d seconds</item>
+        <item quantity="many">%1$d seconds</item>
+        <item quantity="other">%1$d seconds</item>
+    </plurals>
+
+</resources>
