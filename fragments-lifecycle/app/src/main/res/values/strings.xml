@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Fragments</string>
+
+    <string name="number">Number: #%1$d</string>
+    <string name="change_uuid">Change UUID</string>
+    <string name="next_fact">Next fact</string>
+    <string name="change_background">Change background</string>
+    <string name="launch_next">Launch next</string>
+</resources>
