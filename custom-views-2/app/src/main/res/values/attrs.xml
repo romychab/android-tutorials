@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TicTacToeView">
+        <attr name="player1Color" format="color" />
+        <attr name="player2Color" format="color" />
+        <attr name="gridColor" format="color" />
+    </declare-styleable>
+
+    <attr name="ticTacToeFieldStyle" format="reference" />
+
+</resources>

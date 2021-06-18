@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TicTacToe View</string>
+    <string name="random_field">Random Field</string>
+</resources>
