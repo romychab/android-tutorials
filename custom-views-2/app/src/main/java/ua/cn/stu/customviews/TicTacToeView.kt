@@ -13,6 +13,7 @@ import android.util.TypedValue
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
+import kotlin.math.floor
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.properties.Delegates
@@ -316,6 +317,7 @@ class TicTacToeView(
             }
             MotionEvent.ACTION_MOVE -> {
                 updateCurrentCell(event)
+                return true
             }
             MotionEvent.ACTION_UP -> {
                 return performClick()
@@ -367,17 +369,27 @@ class TicTacToeView(
                 currentColumn = column
                 invalidate()
             }
+        } else {
+            // clearing current cell if user moves out from the view
+            currentRow = -1
+            currentColumn = -1
+            invalidate()
         }
     }
 
     // HELPER METHODS
 
     private fun getRow(event: MotionEvent): Int {
-        return ((event.y - fieldRect.top) / cellSize).toInt()
+        // floor is better then simple rounding to int in our case
+        // because it rounds to an integer towards negative infinity
+        // examples:
+        // 1) -0.3.toInt() = 0
+        // 2) floor(-0.3) = -1
+        return floor((event.y - fieldRect.top) / cellSize).toInt()
     }
 
     private fun getColumn(event: MotionEvent): Int {
-        return ((event.x - fieldRect.left) / cellSize).toInt()
+        return floor((event.x - fieldRect.left) / cellSize).toInt()
     }
 
     private fun getCellRect(row: Int, column: Int): RectF {
