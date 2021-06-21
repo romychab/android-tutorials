@@ -70,7 +70,12 @@ class UsersAdapter(
                     .error(R.drawable.ic_user_avatar)
                     .into(photoImageView)
             } else {
+                Glide.with(photoImageView.context).clear(photoImageView)
                 photoImageView.setImageResource(R.drawable.ic_user_avatar)
+                // you can also use the following code instead of these two lines ^
+                // Glide.with(photoImageView.context)
+                //        .load(R.drawable.ic_user_avatar)
+                //        .into(photoImageView)
             }
         }
     }
