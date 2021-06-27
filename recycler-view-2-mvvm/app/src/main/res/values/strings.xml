@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MVVM</string>
+    <string name="move_up">Move Up</string>
+    <string name="move_down">Move Down</string>
+    <string name="remove">Remove</string>
+    <string name="failed_to_load_users">Failed to load users</string>
+    <string name="try_again">Try Again</string>
+    <string name="no_users">No Users</string>
+    <string name="user_has_been_deleted">User has been deleted</string>
+    <string name="cant_load_user_details">Can\'t load user details</string>
+    <string name="cant_delete_user">Can\'t delete the user</string>
+    <string name="cant_move_user">Can\'t move user</string>
+</resources>
