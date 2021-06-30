@@ -1,9 +1,9 @@
 package ua.cn.stu.recyclerview.screens
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import ua.cn.stu.recyclerview.R
-import ua.cn.stu.recyclerview.UserNotFoundException
 import ua.cn.stu.recyclerview.model.UserDetails
 import ua.cn.stu.recyclerview.model.UsersService
 import ua.cn.stu.recyclerview.tasks.EmptyResult
@@ -12,7 +12,8 @@ import ua.cn.stu.recyclerview.tasks.Result
 import ua.cn.stu.recyclerview.tasks.SuccessResult
 
 class UserDetailsViewModel(
-    private val usersService: UsersService
+    private val usersService: UsersService,
+    private val userId: Long
 ) : BaseViewModel() {
 
     private val _state = MutableLiveData<State>()
@@ -31,24 +32,7 @@ class UserDetailsViewModel(
             userDetailsResult = EmptyResult(),
             deletingInProgress = false
         )
-    }
-
-    fun loadUser(userId: Long) {
-        // Do not start 2nd load user details request if we rotate
-        // screen during loading details
-        if (currentState.userDetailsResult !is EmptyResult) return
-
-        _state.value = currentState.copy(userDetailsResult = PendingResult())
-
-        usersService.getById(userId)
-            .onSuccess {
-                _state.value = currentState.copy(userDetailsResult = SuccessResult(it))
-            }
-            .onError {
-                _actionShowToast.value = Event(R.string.cant_load_user_details)
-                _actionGoBack.value = Event(Unit)
-            }
-            .autoCancel()
+        loadUser()
     }
 
     fun deleteUser() {
@@ -67,6 +51,18 @@ class UserDetailsViewModel(
             .autoCancel()
     }
 
+    private fun loadUser() {
+        _state.value = currentState.copy(userDetailsResult = PendingResult())
+        usersService.getById(userId)
+                .onSuccess {
+                    _state.value = currentState.copy(userDetailsResult = SuccessResult(it))
+                }
+                .onError {
+                    _actionShowToast.value = Event(R.string.cant_load_user_details)
+                    _actionGoBack.value = Event(Unit)
+                }
+                .autoCancel()
+    }
 
     data class State(
         val userDetailsResult: Result<UserDetails>,

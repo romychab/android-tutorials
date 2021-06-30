@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import ua.cn.stu.recyclerview.R
@@ -16,11 +15,13 @@ import ua.cn.stu.recyclerview.tasks.SuccessResult
 class UserDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentUserDetailsBinding
-    private val viewModel: UserDetailsViewModel by viewModels { factory() }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel.loadUser(requireArguments().getLong(ARG_USER_ID))
+    // convenient property for getting fragment argument
+    private val userId get() = requireArguments().getLong(ARG_USER_ID)
+
+    // creating view model
+    private val viewModel: UserDetailsViewModel by viewModelCreator {
+        UserDetailsViewModel(it.usersService, userId)
     }
 
     override fun onCreateView(
