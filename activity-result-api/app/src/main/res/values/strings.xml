@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Result API</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_value">Enter value</string>
+    <string name="request_permission">Request Permission</string>
+    <string name="initial_message">Hello World</string>
+    <string name="permission_granted">Permission granted!</string>
+</resources>
