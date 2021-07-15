@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MVVM Navigation</string>
+
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="enter_value">Enter value</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="hello_world">Hello World</string>
+    <string name="empty_message">Can\'t save empty message</string>
+</resources>
