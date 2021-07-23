@@ -3,6 +3,7 @@ package ua.cn.stu.navigation
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Parcelable
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -49,6 +50,13 @@ class MainActivity : AppCompatActivity(), Navigator {
     override fun onDestroy() {
         super.onDestroy()
         supportFragmentManager.unregisterFragmentLifecycleCallbacks(fragmentListener)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // we've called setSupportActionBar in onCreate,
+        // that's why we need to override this method too
+        updateUi()
+        return true
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -129,6 +137,8 @@ class MainActivity : AppCompatActivity(), Navigator {
     }
 
     private fun createCustomToolbarAction(action: CustomAction) {
+        binding.toolbar.menu.clear() // clearing old action if it exists before assigning a new one
+
         val iconDrawable = DrawableCompat.wrap(ContextCompat.getDrawable(this, action.iconRes)!!)
         iconDrawable.setTint(Color.WHITE)
 
