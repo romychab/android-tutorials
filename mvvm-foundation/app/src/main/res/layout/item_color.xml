@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingTop="16dp">
+
+    <FrameLayout
+        android:id="@+id/colorContainer"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/black"
+        android:padding="2dp"
+        android:layout_gravity="center_horizontal">
+
+        <View
+            android:id="@+id/colorView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="#0088ff"/>
+
+        <ImageView
+            android:id="@+id/selectedIndicatorImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_selected"
+            android:visibility="gone"
+            android:contentDescription="@string/selected"
+            tools:visibility="visible"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/colorNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16sp"
+        android:fontFamily="casual"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:lines="1"
+        android:ellipsize="end"
+        tools:text="Color Name"/>
+
+</LinearLayout>

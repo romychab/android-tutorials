@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Simple MVVM</string>
+
+    <string name="color_red">Red</string>
+    <string name="color_green">Green</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_magenta">Magenta</string>
+    <string name="color_cyan">Cyan</string>
+    <string name="color_black">Black</string>
+    <string name="color_white">White</string>
+
+    <string name="changed_color">Color has been changed to: %1$s</string>
+    <string name="change_color">Change Color</string>
+
+    <string name="change_color_screen_title">Change Color (%1$s)</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="selected">Selected</string>
+
+</resources>
