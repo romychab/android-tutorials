@@ -1,4 +1,4 @@
-package ua.cn.stu.simplemvvm.views
+package ua.cn.stu.foundation.uiactions
 
 /**
  * Common actions that can be performed in the view-model

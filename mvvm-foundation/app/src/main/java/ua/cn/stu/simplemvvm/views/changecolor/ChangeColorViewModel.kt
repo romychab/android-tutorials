@@ -7,11 +7,10 @@ import androidx.lifecycle.SavedStateHandle
 import ua.cn.stu.simplemvvm.R
 import ua.cn.stu.simplemvvm.model.colors.ColorsRepository
 import ua.cn.stu.simplemvvm.model.colors.NamedColor
-import ua.cn.stu.simplemvvm.views.Navigator
-import ua.cn.stu.simplemvvm.views.UiActions
-import ua.cn.stu.simplemvvm.views.base.BaseViewModel
+import ua.cn.stu.foundation.navigator.Navigator
+import ua.cn.stu.foundation.uiactions.UiActions
+import ua.cn.stu.foundation.views.BaseViewModel
 import ua.cn.stu.simplemvvm.views.changecolor.ChangeColorFragment.Screen
-import ua.cn.stu.simplemvvm.views.currentcolor.CurrentColorFragment
 
 class ChangeColorViewModel(
     screen: Screen,

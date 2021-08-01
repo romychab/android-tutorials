@@ -1,4 +1,4 @@
-package ua.cn.stu.simplemvvm.model
+package ua.cn.stu.foundation.model
 
 /**
  * Base interface for all repositories

@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ua.cn.stu.simplemvvm.databinding.FragmentCurrentColorBinding
-import ua.cn.stu.simplemvvm.views.base.BaseFragment
-import ua.cn.stu.simplemvvm.views.base.BaseScreen
-import ua.cn.stu.simplemvvm.views.base.screenViewModel
+import ua.cn.stu.foundation.views.BaseFragment
+import ua.cn.stu.foundation.views.BaseScreen
+import ua.cn.stu.foundation.views.screenViewModel
 
 class CurrentColorFragment : BaseFragment() {
 

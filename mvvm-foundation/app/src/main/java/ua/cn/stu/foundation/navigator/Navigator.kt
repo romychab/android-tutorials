@@ -1,6 +1,6 @@
-package ua.cn.stu.simplemvvm.views
+package ua.cn.stu.foundation.navigator
 
-import ua.cn.stu.simplemvvm.views.base.BaseScreen
+import ua.cn.stu.foundation.views.BaseScreen
 
 /**
  * Navigation for your application

@@ -1,4 +1,4 @@
-package ua.cn.stu.simplemvvm.utils
+package ua.cn.stu.foundation.utils
 
 import androidx.lifecycle.LiveData
 

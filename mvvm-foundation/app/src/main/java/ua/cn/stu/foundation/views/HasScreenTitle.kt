@@ -1,6 +1,4 @@
-package ua.cn.stu.simplemvvm.views
-
-import ua.cn.stu.simplemvvm.views.base.BaseFragment
+package ua.cn.stu.foundation.views
 
 /**
  * If your fragment wants to show custom screen title in the toolbar, implement this

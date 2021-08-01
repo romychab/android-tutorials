@@ -2,14 +2,13 @@ package ua.cn.stu.simplemvvm.views.currentcolor
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import ua.cn.stu.simplemvvm.R
 import ua.cn.stu.simplemvvm.model.colors.ColorListener
 import ua.cn.stu.simplemvvm.model.colors.ColorsRepository
 import ua.cn.stu.simplemvvm.model.colors.NamedColor
-import ua.cn.stu.simplemvvm.views.Navigator
-import ua.cn.stu.simplemvvm.views.UiActions
-import ua.cn.stu.simplemvvm.views.base.BaseViewModel
+import ua.cn.stu.foundation.navigator.Navigator
+import ua.cn.stu.foundation.uiactions.UiActions
+import ua.cn.stu.foundation.views.BaseViewModel
 import ua.cn.stu.simplemvvm.views.changecolor.ChangeColorFragment
 
 class CurrentColorViewModel(
