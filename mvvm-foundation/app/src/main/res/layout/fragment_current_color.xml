@@ -37,4 +37,6 @@
         app:layout_constraintTop_toBottomOf="@id/colorContainer"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <include layout="@layout/part_result" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

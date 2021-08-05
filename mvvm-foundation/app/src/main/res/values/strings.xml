@@ -14,8 +14,12 @@
     <string name="change_color">Change Color</string>
 
     <string name="change_color_screen_title">Change Color (%1$s)</string>
+    <string name="change_color_screen_title_simple">Change Color</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
     <string name="selected">Selected</string>
+    <string name="error_try_again_later">Error! Please try again later</string>
+    <string name="try_again">Try Again</string>
 
+    <string name="error_happened">Can\'t save color</string>
 </resources>
