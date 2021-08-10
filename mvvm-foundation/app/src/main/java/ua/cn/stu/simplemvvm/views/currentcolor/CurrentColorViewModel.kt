@@ -1,9 +1,5 @@
 package ua.cn.stu.simplemvvm.views.currentcolor
 
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import ua.cn.stu.foundation.model.ErrorResult
 import ua.cn.stu.foundation.model.PendingResult
 import ua.cn.stu.foundation.model.SuccessResult
 import ua.cn.stu.foundation.model.takeSuccess
@@ -34,11 +30,8 @@ class CurrentColorViewModel(
     // --- example of listening results via model layer
 
     init {
-        // todo: mocking long-running content loading for view
-        viewModelScope.launch {
-            delay(2000)
-            colorsRepository.addListener(colorListener)
-        }
+        colorsRepository.addListener(colorListener)
+        load()
     }
 
     override fun onCleared() {
@@ -65,12 +58,11 @@ class CurrentColorViewModel(
     }
 
     fun tryAgain() {
-        // todo: mocking long-running reloading for view
-        viewModelScope.launch {
-            _currentColor.postValue(PendingResult())
-            delay(2000)
-            colorsRepository.addListener(colorListener)
-        }
+        load()
+    }
+
+    private fun load() {
+        colorsRepository.getCurrentColor().into(_currentColor)
     }
 
 }
