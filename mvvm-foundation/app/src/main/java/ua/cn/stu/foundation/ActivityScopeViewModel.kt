@@ -1,25 +1,26 @@
 package ua.cn.stu.foundation
 
 import androidx.lifecycle.ViewModel
-import ua.cn.stu.foundation.navigator.IntermediateNavigator
-import ua.cn.stu.foundation.navigator.Navigator
-import ua.cn.stu.foundation.uiactions.UiActions
+import ua.cn.stu.foundation.sideeffects.SideEffectMediator
+import ua.cn.stu.foundation.sideeffects.SideEffectMediatorsHolder
 
 /**
- * Implementation of [Navigator] and [UiActions].
- * It is based on activity view-model because instances of [Navigator] and [UiActions]
+ * Holder for side-effect mediators.
+ * It is based on activity view-model because instances of side-effect mediators
  * should be available from fragments' view-models (usually they are passed to the view-model constructor).
  */
-class ActivityScopeViewModel(
-    val uiActions: UiActions,
-    val navigator: IntermediateNavigator
-) : ViewModel(),
-    Navigator by navigator,
-    UiActions by uiActions {
+class ActivityScopeViewModel : ViewModel() {
+
+    internal val sideEffectMediatorsHolder = SideEffectMediatorsHolder()
+
+    // contains the list of side-effect mediators that can be
+    // passed to view-model constructors
+    val sideEffectMediators: List<SideEffectMediator<*>>
+        get() = sideEffectMediatorsHolder.mediators
 
     override fun onCleared() {
         super.onCleared()
-        navigator.clear()
+        sideEffectMediatorsHolder.clear()
     }
 
 }

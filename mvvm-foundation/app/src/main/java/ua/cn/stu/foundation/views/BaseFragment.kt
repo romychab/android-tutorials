@@ -8,6 +8,7 @@ import ua.cn.stu.foundation.model.ErrorResult
 import ua.cn.stu.foundation.model.PendingResult
 import ua.cn.stu.foundation.model.Result
 import ua.cn.stu.foundation.model.SuccessResult
+import ua.cn.stu.foundation.views.activity.ActivityDelegateHolder
 
 /**
  * Base class for all fragments
@@ -23,7 +24,7 @@ abstract class BaseFragment : Fragment() {
      * Call this method when activity controls (e.g. toolbar) should be re-rendered
      */
     fun notifyScreenUpdates() {
-        (requireActivity() as FragmentsHolder).notifyScreenUpdates()
+        (requireActivity() as ActivityDelegateHolder).delegate.notifyScreenUpdates()
     }
 
     /**

@@ -1,9 +1,11 @@
-package ua.cn.stu.foundation.navigator
+package ua.cn.stu.foundation.sideeffects.navigator
 
+import ua.cn.stu.foundation.sideeffects.navigator.plugin.NavigatorPlugin
 import ua.cn.stu.foundation.views.BaseScreen
 
 /**
- * Navigation for your application
+ * Side-effects interface for doing navigation from view-models.
+ * You need to add [NavigatorPlugin] to your activity before using this feature.
  */
 interface Navigator {
 

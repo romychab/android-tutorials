@@ -4,8 +4,9 @@ import ua.cn.stu.foundation.model.PendingResult
 import ua.cn.stu.foundation.model.SuccessResult
 import ua.cn.stu.foundation.model.takeSuccess
 import ua.cn.stu.foundation.model.tasks.dispatchers.Dispatcher
-import ua.cn.stu.foundation.navigator.Navigator
-import ua.cn.stu.foundation.uiactions.UiActions
+import ua.cn.stu.foundation.sideeffects.navigator.Navigator
+import ua.cn.stu.foundation.sideeffects.resources.Resources
+import ua.cn.stu.foundation.sideeffects.toasts.Toasts
 import ua.cn.stu.foundation.views.BaseViewModel
 import ua.cn.stu.foundation.views.LiveResult
 import ua.cn.stu.foundation.views.MutableLiveResult
@@ -17,7 +18,8 @@ import ua.cn.stu.simplemvvm.views.changecolor.ChangeColorFragment
 
 class CurrentColorViewModel(
     private val navigator: Navigator,
-    private val uiActions: UiActions,
+    private val toasts: Toasts,
+    private val resources: Resources,
     private val colorsRepository: ColorsRepository,
     dispatcher: Dispatcher
 ) : BaseViewModel(dispatcher) {
@@ -46,8 +48,8 @@ class CurrentColorViewModel(
     override fun onResult(result: Any) {
         super.onResult(result)
         if (result is NamedColor) {
-            val message = uiActions.getString(R.string.changed_color, result.name)
-            uiActions.toast(message)
+            val message = resources.getString(R.string.changed_color, result.name)
+            toasts.toast(message)
         }
     }
 

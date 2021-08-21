@@ -1,14 +1,12 @@
 package ua.cn.stu.simplemvvm.views.changecolor
 
 import androidx.lifecycle.*
-import ua.cn.stu.foundation.model.ErrorResult
-import ua.cn.stu.foundation.model.FinalResult
-import ua.cn.stu.foundation.model.PendingResult
-import ua.cn.stu.foundation.model.SuccessResult
+import ua.cn.stu.foundation.model.*
 import ua.cn.stu.foundation.model.tasks.dispatchers.Dispatcher
 import ua.cn.stu.foundation.model.tasks.factories.TasksFactory
-import ua.cn.stu.foundation.navigator.Navigator
-import ua.cn.stu.foundation.uiactions.UiActions
+import ua.cn.stu.foundation.sideeffects.navigator.Navigator
+import ua.cn.stu.foundation.sideeffects.resources.Resources
+import ua.cn.stu.foundation.sideeffects.toasts.Toasts
 import ua.cn.stu.foundation.views.BaseViewModel
 import ua.cn.stu.foundation.views.LiveResult
 import ua.cn.stu.foundation.views.MediatorLiveResult
@@ -21,7 +19,8 @@ import ua.cn.stu.simplemvvm.views.changecolor.ChangeColorFragment.Screen
 class ChangeColorViewModel(
     screen: Screen,
     private val navigator: Navigator,
-    private val uiActions: UiActions,
+    private val toasts: Toasts,
+    private val resources: Resources,
     private val colorsRepository: ColorsRepository,
     private val tasksFactory: TasksFactory,
     savedStateHandle: SavedStateHandle,
@@ -40,9 +39,9 @@ class ChangeColorViewModel(
     val screenTitle: LiveData<String> = Transformations.map(viewState) { result ->
         if (result is SuccessResult) {
             val currentColor = result.data.colorsList.first { it.selected }
-            uiActions.getString(R.string.change_color_screen_title, currentColor.namedColor.name)
+            resources.getString(R.string.change_color_screen_title, currentColor.namedColor.name)
         } else {
-            uiActions.getString(R.string.change_color_screen_title_simple)
+            resources.getString(R.string.change_color_screen_title_simple)
         }
     }
 
@@ -114,7 +113,7 @@ class ChangeColorViewModel(
         _saveInProgress.value = false
         when (result) {
             is SuccessResult -> navigator.goBack(result.data)
-            is ErrorResult -> uiActions.toast(uiActions.getString(R.string.error_happened))
+            is ErrorResult -> toasts.toast(resources.getString(R.string.error_happened))
         }
     }
 
