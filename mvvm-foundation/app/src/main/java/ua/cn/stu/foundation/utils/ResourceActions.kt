@@ -1,6 +1,6 @@
 package ua.cn.stu.foundation.utils
 
-import ua.cn.stu.foundation.model.tasks.dispatchers.Dispatcher
+import java.util.concurrent.Executor
 
 typealias ResourceAction<T> = (T) -> Unit
 
@@ -9,7 +9,7 @@ typealias ResourceAction<T> = (T) -> Unit
  * action is added to queue and waits until resource becomes available.
  */
 class ResourceActions<T>(
-    private val dispatcher: Dispatcher
+    private val executor: Executor
 ) {
 
     var resource: T? = null
@@ -17,7 +17,7 @@ class ResourceActions<T>(
             field = newValue
             if (newValue != null) {
                 actions.forEach { action ->
-                    dispatcher.dispatch {
+                    executor.execute {
                         action(newValue)
                     }
                 }
@@ -36,7 +36,7 @@ class ResourceActions<T>(
         if (resource == null) {
             actions += action
         } else {
-            dispatcher.dispatch {
+            executor.execute {
                 action(resource)
             }
         }

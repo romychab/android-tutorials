@@ -1,6 +1,5 @@
 package ua.cn.stu.foundation.sideeffects.dialogs
 
-import ua.cn.stu.foundation.model.tasks.Task
 import ua.cn.stu.foundation.sideeffects.dialogs.plugin.DialogConfig
 import ua.cn.stu.foundation.sideeffects.dialogs.plugin.DialogsPlugin
 
@@ -15,6 +14,6 @@ interface Dialogs {
     /**
      * Show alert dialog to the user and wait for the user choice.
      */
-    fun show(dialogConfig: DialogConfig): Task<Boolean>
+    suspend fun show(dialogConfig: DialogConfig): Boolean
 
 }

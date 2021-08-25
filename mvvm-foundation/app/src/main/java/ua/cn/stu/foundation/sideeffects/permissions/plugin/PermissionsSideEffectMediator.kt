@@ -3,10 +3,10 @@ package ua.cn.stu.foundation.sideeffects.permissions.plugin
 import android.content.Context
 import android.content.pm.PackageManager
 import androidx.core.content.ContextCompat
+import kotlinx.coroutines.suspendCancellableCoroutine
 import ua.cn.stu.foundation.model.ErrorResult
-import ua.cn.stu.foundation.model.tasks.Task
-import ua.cn.stu.foundation.model.tasks.callback.CallbackTask
-import ua.cn.stu.foundation.model.tasks.callback.Emitter
+import ua.cn.stu.foundation.model.coroutines.Emitter
+import ua.cn.stu.foundation.model.coroutines.toEmitter
 import ua.cn.stu.foundation.sideeffects.SideEffectMediator
 import ua.cn.stu.foundation.sideeffects.permissions.Permissions
 
@@ -20,10 +20,11 @@ class PermissionsSideEffectMediator(
         return ContextCompat.checkSelfPermission(appContext, permission) == PackageManager.PERMISSION_GRANTED
     }
 
-    override fun requestPermission(permission: String): Task<PermissionStatus> = CallbackTask.create { emitter ->
+    override suspend fun requestPermission(permission: String): PermissionStatus = suspendCancellableCoroutine { continuation ->
+        val emitter = continuation.toEmitter()
         if (retainedState.emitter != null) {
             emitter.emit(ErrorResult(IllegalStateException("Only one permission request can be active")))
-            return@create
+            return@suspendCancellableCoroutine
         }
         retainedState.emitter = emitter
         target { implementation ->

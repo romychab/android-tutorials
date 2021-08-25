@@ -1,9 +1,9 @@
 package ua.cn.stu.foundation.sideeffects
 
 import ua.cn.stu.foundation.ActivityScopeViewModel
-import ua.cn.stu.foundation.model.tasks.dispatchers.Dispatcher
-import ua.cn.stu.foundation.model.tasks.dispatchers.MainThreadDispatcher
+import ua.cn.stu.foundation.utils.MainThreadExecutor
 import ua.cn.stu.foundation.utils.ResourceActions
+import java.util.concurrent.Executor
 
 /**
  * Base class for all side-effect mediators.
@@ -11,13 +11,13 @@ import ua.cn.stu.foundation.utils.ResourceActions
  * Mediator should delegate all UI-related logic to the implementations via [target] field.
  */
 open class SideEffectMediator<Implementation>(
-    dispatcher: Dispatcher = MainThreadDispatcher()
+    executor: Executor = MainThreadExecutor()
 ) {
 
-    protected val target = ResourceActions<Implementation>(dispatcher)
+    protected val target = ResourceActions<Implementation>(executor)
 
     /**
-     * Assign/unassign the target implementation for this provder.
+     * Assign/unassign the target implementation for this mediator.
      */
     fun setTarget(target: Implementation?) {
         this.target.resource = target

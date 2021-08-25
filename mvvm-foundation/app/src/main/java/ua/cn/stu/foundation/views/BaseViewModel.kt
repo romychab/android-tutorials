@@ -4,11 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ua.cn.stu.foundation.model.PendingResult
+import kotlinx.coroutines.*
+import ua.cn.stu.foundation.model.ErrorResult
 import ua.cn.stu.foundation.model.Result
-import ua.cn.stu.foundation.model.tasks.Task
-import ua.cn.stu.foundation.model.tasks.TaskListener
-import ua.cn.stu.foundation.model.tasks.dispatchers.Dispatcher
+import ua.cn.stu.foundation.model.SuccessResult
 import ua.cn.stu.foundation.utils.Event
 
 typealias LiveEvent<T> = LiveData<Event<T>>
@@ -21,15 +20,18 @@ typealias MediatorLiveResult<T> = MediatorLiveData<Result<T>>
 /**
  * Base class for all view-models.
  */
-open class BaseViewModel(
-    private val dispatcher: Dispatcher
-) : ViewModel() {
+open class BaseViewModel : ViewModel() {
 
-    private val tasks = mutableSetOf<Task<*>>()
+    private val coroutineContext = SupervisorJob() + Dispatchers.Main.immediate + CoroutineExceptionHandler { _, throwable ->
+        // you can add some exception handling here
+    }
+
+    // custom scope which cancels jobs immediately when back button is pressed
+    protected val viewModelScope = CoroutineScope(coroutineContext)
 
     override fun onCleared() {
         super.onCleared()
-        clearTasks()
+        clearScope()
     }
 
     /**
@@ -45,37 +47,26 @@ open class BaseViewModel(
      * Return `true` if you want to abort closing this screen
      */
     open fun onBackPressed(): Boolean {
-        clearTasks()
+        clearScope()
         return false
     }
 
     /**
-     * Launch task asynchronously, listen for its result and
-     * automatically unsubscribe the listener in case of view-model destroying.
+     * Launch the specified suspending [block] and use its result as a valud for the
+     * provided [liveResult].
      */
-    fun <T> Task<T>.safeEnqueue(listener: TaskListener<T>? = null) {
-        tasks.add(this)
-        this.enqueue(dispatcher) {
-            tasks.remove(this)
-            listener?.invoke(it)
+    fun <T> into(liveResult: MutableLiveResult<T>, block: suspend () -> T) {
+        viewModelScope.launch {
+            try {
+                liveResult.postValue(SuccessResult(block()))
+            } catch (e: Exception) {
+                if (e !is CancellationException) liveResult.postValue(ErrorResult(e))
+            }
         }
     }
 
-    /**
-     * Launch task asynchronously and map its result to the specified
-     * [liveResult].
-     * Task is cancelled automatically if view-model is going to be destroyed.
-     */
-    fun <T> Task<T>.into(liveResult: MutableLiveResult<T>) {
-        liveResult.value = PendingResult()
-        this.safeEnqueue {
-            liveResult.value = it
-        }
-    }
-
-    private fun clearTasks() {
-        tasks.forEach { it.cancel() }
-        tasks.clear()
+    private fun clearScope() {
+        viewModelScope.cancel()
     }
 
 }
