@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Simple MVVM (Coroutines)</string>
+
+    <string name="color_red">Red</string>
+    <string name="color_green">Green</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_magenta">Magenta</string>
+    <string name="color_cyan">Cyan</string>
+    <string name="color_black">Black</string>
+    <string name="color_white">White</string>
+
+    <string name="changed_color">Color has been changed to: %1$s</string>
+    <string name="change_color">Change Color</string>
+
+    <string name="change_color_screen_title">Change Color (%1$s)</string>
+    <string name="change_color_screen_title_simple">Change Color</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="selected">Selected</string>
+    <string name="error_try_again_later">Error! Please try again later</string>
+    <string name="try_again">Try Again</string>
+
+    <string name="error_happened">Can\'t save color</string>
+
+    <string name="request_permissions">Request Permissions</string>
+    <string name="dialog_permissions_title">Permissions</string>
+    <string name="permissions_already_granted">Permission has been already granted</string>
+    <string name="action_open">Open</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="open_app_settings_message">It seems you have denied permissions forever. You can change your decision in app settings.\n\nOpen app settings?</string>
+    <string name="permissions_grated">Congratulations! Permission has been granted</string>
+    <string name="permissions_denied">Oops, permissions denied!</string>
+</resources>
