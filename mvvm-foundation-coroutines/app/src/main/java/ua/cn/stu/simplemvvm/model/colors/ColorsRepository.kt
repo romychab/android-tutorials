@@ -1,5 +1,6 @@
 package ua.cn.stu.simplemvvm.model.colors
 
+import kotlinx.coroutines.flow.Flow
 import ua.cn.stu.foundation.model.Repository
 
 typealias ColorListener = (NamedColor) -> Unit
@@ -29,17 +30,13 @@ interface ColorsRepository : Repository {
     /**
      * Set the specified color as current.
      */
-    suspend fun setCurrentColor(color: NamedColor)
+    fun setCurrentColor(color: NamedColor): Flow<Int>
 
     /**
-     * Listen for the current color changes.
-     * The listener is triggered immediately with the current value when calling this method.
+     * Listen for further changes of the current color.
+     * @return [Flow] which emits a new item whenever [setCurrentColor] call
+     * changes the current color.
      */
-    fun addListener(listener: ColorListener)
-
-    /**
-     * Stop listening for the current color changes
-     */
-    fun removeListener(listener: ColorListener)
+    fun listenCurrentColor(): Flow<NamedColor>
 
 }

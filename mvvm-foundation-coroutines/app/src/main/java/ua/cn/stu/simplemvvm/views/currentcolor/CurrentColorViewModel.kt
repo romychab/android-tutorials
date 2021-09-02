@@ -1,6 +1,7 @@
 package ua.cn.stu.simplemvvm.views.currentcolor
 
 import android.Manifest
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import ua.cn.stu.foundation.model.PendingResult
 import ua.cn.stu.foundation.model.SuccessResult
@@ -17,7 +18,6 @@ import ua.cn.stu.foundation.views.BaseViewModel
 import ua.cn.stu.foundation.views.LiveResult
 import ua.cn.stu.foundation.views.MutableLiveResult
 import ua.cn.stu.simplemvvm.R
-import ua.cn.stu.simplemvvm.model.colors.ColorListener
 import ua.cn.stu.simplemvvm.model.colors.ColorsRepository
 import ua.cn.stu.simplemvvm.model.colors.NamedColor
 import ua.cn.stu.simplemvvm.views.changecolor.ChangeColorFragment
@@ -35,20 +35,18 @@ class CurrentColorViewModel(
     private val _currentColor = MutableLiveResult<NamedColor>(PendingResult())
     val currentColor: LiveResult<NamedColor> = _currentColor
 
-    private val colorListener: ColorListener = {
-        _currentColor.postValue(SuccessResult(it))
-    }
-
     // --- example of listening results via model layer
 
     init {
-        colorsRepository.addListener(colorListener)
+        viewModelScope.launch {
+            // as listenCurrentColor() returns infinite flow,
+            // collecting is cancelled when view-model is going to be destroyed
+            // (because collect() is executed inside viewModelScope)
+            colorsRepository.listenCurrentColor().collect {
+                _currentColor.postValue(SuccessResult(it))
+            }
+        }
         load()
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        colorsRepository.removeListener(colorListener)
     }
 
     // --- example of listening results directly from the screen

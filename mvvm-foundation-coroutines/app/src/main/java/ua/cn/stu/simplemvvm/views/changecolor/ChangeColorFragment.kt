@@ -13,6 +13,7 @@ import ua.cn.stu.foundation.views.HasScreenTitle
 import ua.cn.stu.foundation.views.screenViewModel
 import ua.cn.stu.simplemvvm.R
 import ua.cn.stu.simplemvvm.databinding.FragmentChangeColorBinding
+import ua.cn.stu.simplemvvm.views.collectFlow
 import ua.cn.stu.simplemvvm.views.onTryAgain
 import ua.cn.stu.simplemvvm.views.renderSimpleResult
 
@@ -48,7 +49,7 @@ class ChangeColorFragment : BaseFragment(), HasScreenTitle {
         binding.saveButton.setOnClickListener { viewModel.onSavePressed() }
         binding.cancelButton.setOnClickListener { viewModel.onCancelPressed() }
 
-        viewModel.viewState.observe(viewLifecycleOwner) { result ->
+        collectFlow(viewModel.viewState) { result ->
             renderSimpleResult(binding.root, result) { viewState ->
                 adapter.items = viewState.colorsList
                 binding.saveButton.visibility = if (viewState.showSaveButton) View.VISIBLE else View.INVISIBLE
