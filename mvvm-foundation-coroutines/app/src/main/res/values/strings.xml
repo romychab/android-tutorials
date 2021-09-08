@@ -32,4 +32,8 @@
     <string name="open_app_settings_message">It seems you have denied permissions forever. You can change your decision in app settings.\n\nOpen app settings?</string>
     <string name="permissions_grated">Congratulations! Permission has been granted</string>
     <string name="permissions_denied">Oops, permissions denied!</string>
+
+    <string name="percentage_value">%1$d%%</string>
+    <string name="please_wait">Please wait…</string>
+
 </resources>

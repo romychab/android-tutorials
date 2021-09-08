@@ -3,8 +3,6 @@ package ua.cn.stu.simplemvvm.model.colors
 import kotlinx.coroutines.flow.Flow
 import ua.cn.stu.foundation.model.Repository
 
-typealias ColorListener = (NamedColor) -> Unit
-
 /**
  * Repository interface example.
  *
@@ -29,6 +27,7 @@ interface ColorsRepository : Repository {
 
     /**
      * Set the specified color as current.
+     * @return [Flow] which periodically emits the current progress of the operation in percents.
      */
     fun setCurrentColor(color: NamedColor): Flow<Int>
 

@@ -1,8 +1,7 @@
 package ua.cn.stu.simplemvvm.model.colors
 
 import android.graphics.Color
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.withContext
@@ -17,19 +16,13 @@ class InMemoryColorsRepository(
 
     private var currentColor: NamedColor = AVAILABLE_COLORS[0]
 
-    private val listeners = mutableSetOf<ColorListener>()
+    private val currentColorFlow = MutableSharedFlow<NamedColor>(
+        replay = 0, // do not send events to new subscribers which have been emitted before subscription
+        extraBufferCapacity = 1, // min. buffer capacity for using DROP_OLDEST overflow policy
+        onBufferOverflow = BufferOverflow.DROP_OLDEST // newest item will replace oldest item in case of buffer overflow
+    )
 
-    override fun listenCurrentColor(): Flow<NamedColor> = callbackFlow {
-        val listener: ColorListener = {
-            trySend(it)
-        }
-        listeners.add(listener)
-
-        awaitClose {
-            // this block is executed upon cancelling/closing, useful for cleanup logic
-            listeners.remove(listener)
-        }
-    }.buffer(Channel.CONFLATED) // Channel.CONFLATED is useful when you need only the most recent values
+    override fun listenCurrentColor(): Flow<NamedColor> = currentColorFlow
 
     override suspend fun getAvailableColors(): List<NamedColor> = withContext(ioDispatcher.value) {
         delay(1000)
@@ -37,7 +30,7 @@ class InMemoryColorsRepository(
     }
 
     override suspend fun getById(id: Long): NamedColor = withContext(ioDispatcher.value) {
-        delay(1000)
+        delay(100)
         return@withContext AVAILABLE_COLORS.first { it.id == id }
     }
 
@@ -55,7 +48,7 @@ class InMemoryColorsRepository(
                 emit(progress)
             }
             currentColor = color
-            listeners.forEach { it(color) }
+            currentColorFlow.emit(color)
         } else {
             emit(100)
         }
