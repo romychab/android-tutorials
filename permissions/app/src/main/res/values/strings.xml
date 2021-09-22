@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Permissions</string>
+    <string name="request_camera_permission">Request CAMERA permission:</string>
+    <string name="request">Request</string>
+    <string name="request_record_audio_and_access_fine_location_permissions">Request RECORD_AUDIO and ACCESS_FINE_LOCATION permissions:</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="permission_denied_forever_message">"You have denied permissions forever. You can change your decision in the app settings.\n\nWould you like to open app settings?"</string>
+    <string name="audio_and_location_permissions_granted"><![CDATA[Location & record audio permissions grated]]></string>
+    <string name="open">Open</string>
+    <string name="camera_permission_granted">Camera permission has been granted</string>
+    <string name="permissions_denied_forever">Permissions are denied forever</string>
+</resources>
