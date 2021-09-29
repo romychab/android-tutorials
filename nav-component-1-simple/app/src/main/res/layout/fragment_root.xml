@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="ua.cn.stu.navcomponent.RootFragment">
+
+    <Button
+        android:id="@+id/openGreenBoxButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#008800"
+        android:text="@string/green_box"/>
+
+    <Button
+        android:id="@+id/openYellowBoxButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#ffff00"
+        android:textColor="@color/black"
+        android:text="@string/yellow_box"/>
+
+</LinearLayout>

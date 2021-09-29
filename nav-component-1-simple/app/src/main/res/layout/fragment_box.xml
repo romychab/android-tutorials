@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:background="#bbffbb"
+    tools:context="ua.cn.stu.navcomponent.BoxFragment">
+
+    <TextView
+        android:id="@+id/valueTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="@string/this_is_a_box"/>
+
+    <Button
+        android:id="@+id/goBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_back"/>
+
+    <Button
+        android:id="@+id/openSecretButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_secret"/>
+
+    <Button
+        android:id="@+id/generateNumberButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/generate_number"/>
+
+</LinearLayout>

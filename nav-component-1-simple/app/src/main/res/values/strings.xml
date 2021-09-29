@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Nav Component</string>
+
+    <string name="this_is_a_secret_place">This is a secret place</string>
+    <string name="close_secret">Close Secret</string>
+    <string name="close_the_whole_box">Close The Whole Box</string>
+    <string name="this_is_a_box">This is a box!</string>
+    <string name="go_back">Go Back</string>
+    <string name="open_secret">Open secret</string>
+    <string name="green_box">Green Box</string>
+    <string name="yellow_box">Yellow Box</string>
+    <string name="generated_number">Generated number: %1$d</string>
+    <string name="generate_number">Generate number</string>
+</resources>
