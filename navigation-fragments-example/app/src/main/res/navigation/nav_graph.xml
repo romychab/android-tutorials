@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="ua.cn.stu.navigation.fragments.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about"/>
+    <fragment
+        android:id="@+id/boxFragment"
+        android:name="ua.cn.stu.navigation.fragments.BoxFragment"
+        android:label="BoxFragment"
+        tools:layout="@layout/fragment_box"/>
+    <fragment
+        android:id="@+id/boxSelectionFragment"
+        android:name="ua.cn.stu.navigation.fragments.BoxSelectionFragment"
+        android:label="BoxSelectionFragment"
+        tools:layout="@layout/fragment_box_selection">
+        <action
+            android:id="@+id/action_boxSelectionFragment_to_boxFragment"
+            app:destination="@id/boxFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/optionsFragment"
+        android:name="ua.cn.stu.navigation.fragments.OptionsFragment"
+        android:label="OptionsFragment"
+        tools:layout="@layout/fragment_options"/>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="ua.cn.stu.navigation.fragments.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_boxSelectionFragment"
+            app:destination="@id/boxSelectionFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_optionsFragment"
+            app:destination="@id/optionsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+</navigation>
