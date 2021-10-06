@@ -11,4 +11,9 @@
     <string name="yellow_box">Yellow Box</string>
     <string name="generated_number">Generated number: %1$d</string>
     <string name="generate_number">Generate number</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="root">Root</string>
+    <string name="secret">Secret</string>
+    <string name="box_title">{colorName} Box</string>
 </resources>

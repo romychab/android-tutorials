@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/rootFragment"
         android:name="ua.cn.stu.navcomponent.RootFragment"
-        android:label="fragment_root"
+        android:label="@string/root"
         tools:layout="@layout/fragment_root" >
         <action
             android:id="@+id/action_rootFragment_to_boxFragment"
@@ -18,17 +18,23 @@
     <fragment
         android:id="@+id/boxFragment"
         android:name="ua.cn.stu.navcomponent.BoxFragment"
-        android:label="fragment_box"
+        android:label="@string/box_title"
         tools:layout="@layout/fragment_box" >
         <action
             android:id="@+id/action_boxFragment_to_secretFragment"
             app:destination="@id/secretFragment" />
+        <argument
+            android:name="color"
+            app:argType="integer" />
+        <argument
+            android:name="colorName"
+            app:argType="string" />
     </fragment>
 
     <fragment
         android:id="@+id/secretFragment"
         android:name="ua.cn.stu.navcomponent.SecretFragment"
-        android:label="fragment_secret"
+        android:label="@string/secret"
         tools:layout="@layout/fragment_secret" />
 
 </navigation>
