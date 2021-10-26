@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="big_width">260dp</dimen>
+    <dimen name="medium_space">12dp</dimen>
+    <dimen name="large_space">30dp</dimen>
+
+    <dimen name="dashboard_item_stroke_width">3dp</dimen>
+    <dimen name="dashboard_item_corner_radius">8dp</dimen>
+    <dimen name="dashboard_item_width">140dp</dimen>
+    <dimen name="dashboard_item_height">90dp</dimen>
+
+</resources>

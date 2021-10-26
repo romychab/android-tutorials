@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.main.tabs.TabsFragment">
+
+    <!-- TODO: Create a navigation graph for tabs and register it here.
+               by using app:navGraph attribute. Navigation graph for tabs should
+               contain 3 sub-graphs for each tab:
+               1) dashboard 2) settings 3) profile -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/tabsContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"/>
+
+    <!-- TODO: Create a menu with icons and titles and assign the created menu to
+               this BottomNavigationView using app:menu attribute. Menu resource file
+               should contain the same 3 items pointing to the navigation sub-graphs -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

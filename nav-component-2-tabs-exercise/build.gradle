@@ -1,0 +1,32 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.5.20"
+    // todo: define version of nav component library here (at least '2.4.0-alpha10')
+    ext.nav_version = "2.4.0-alpha10"
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // todo: include dependency for safe-args plugin here: androidx.navigation:navigation-safe-args-gradle-plugin
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
