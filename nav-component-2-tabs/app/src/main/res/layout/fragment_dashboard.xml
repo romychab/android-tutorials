@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.main.tabs.dashboard.DashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/boxesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flowView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:flow_wrapMode="chain"
+            app:flow_horizontalStyle="packed"
+            app:flow_horizontalGap="@dimen/medium_space"
+            app:flow_verticalGap="@dimen/medium_space"
+            app:constraint_referenced_ids="greenBox,yellowBox"/>
+
+        <!-- This is an example, real items are derived from the model: -->
+
+        <ua.cn.stu.navcomponent.tabs.views.DashboardItemView
+            android:id="@+id/greenBox"
+            style="@style/DefaultDashboardItemStyle"
+            app:color="#008800"
+            app:title="Green Box" />
+
+        <ua.cn.stu.navcomponent.tabs.views.DashboardItemView
+            android:id="@+id/yellowBox"
+            style="@style/DefaultDashboardItemStyle"
+            app:color="#888800"
+            app:title="Yellow Box" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/noBoxesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="@string/no_boxes"
+        android:visibility="gone"/>
+
+</FrameLayout>
