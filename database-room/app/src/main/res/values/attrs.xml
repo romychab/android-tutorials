@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="dashboardItemStyle" format="reference"/>
+    <declare-styleable name="DashboardItemView">
+        <attr name="color" format="color"/>
+        <attr name="title" format="string" />
+        <attr name="boxId" format="reference" />
+    </declare-styleable>
+
+</resources>
