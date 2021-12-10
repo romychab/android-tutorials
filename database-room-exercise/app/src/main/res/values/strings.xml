@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Room Exercise</string>
+
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="black">Black</string>
+    <string name="yellow">Yellow</string>
+    <string name="violet">Violet</string>
+
+    <string name="this_is_box">This is a %1$s box!</string>
+    <string name="box_title">%1$s box</string>
+    <string name="go_back">Go Back</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_edit_profile">Edit Profile</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_create_account">Create Account</string>
+    <string name="field_username">Username</string>
+    <string name="field_email">Email</string>
+    <string name="field_password">Password</string>
+    <string name="field_created_at">Created at</string>
+    <string name="field_repeat_password">Repeat Password</string>
+    <string name="field_is_empty">Field is empty</string>
+    <string name="password_mismatch">Password mismatch</string>
+    <string name="account_already_exists">Account already exists</string>
+    <string name="sign_up_success">Wow, you have created a new account. Now you can login with it.</string>
+    <string name="edit_profile_description">Right now you can edit only username</string>
+    <string name="invalid_email_or_password">Invalid email or password</string>
+    <string name="enable_checkbox">Enable %1$s box</string>
+    <string name="settings_description">Enable or disable any box you want</string>
+    <string name="placeholder">-</string>
+
+    <string name="no_boxes">There aren\'t boxes you are looking for</string>
+    <string name="please_wait">Please wait…</string>
+    <string name="profile_title_hint">Let\'s imagine this is a user profile screen</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="screen_dashboard">Dashboard</string>
+    <string name="screen_box">{colorName} Box</string>
+    <string name="screen_sign_in">Sign In</string>
+    <string name="screen_sign_up">Create Account</string>
+    <string name="screen_profile">Profile</string>
+    <string name="screen_settings">Settings</string>
+    <string name="screen_edit_profile">Edit Profile</string>
+    <string name="storage_error">Local storage error</string>
+</resources>
