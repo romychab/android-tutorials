@@ -1,10 +1,8 @@
 package ua.cn.stu.dialogs
 
-import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
-import android.view.View
-import android.view.inputmethod.InputMethodManager
+import android.view.WindowManager
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import ua.cn.stu.dialogs.databinding.ActivityLevel2Binding
@@ -91,8 +89,6 @@ class DialogsLevel2Activity : AppCompatActivity() {
                 .create()
         dialog.setOnShowListener {
             dialogBinding.volumeInputEditText.requestFocus()
-            showKeyboard(dialogBinding.volumeInputEditText)
-
             dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
                 val enteredText = dialogBinding.volumeInputEditText.text.toString()
                 if (enteredText.isBlank()) {
@@ -109,27 +105,12 @@ class DialogsLevel2Activity : AppCompatActivity() {
                 dialog.dismiss()
             }
         }
-        dialog.setOnDismissListener { hideKeyboard(dialogBinding.volumeInputEditText) }
+        dialog.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE)
         dialog.show()
     }
 
     private fun updateUi() {
         binding.currentVolumeTextView.text = getString(R.string.current_volume, volume)
-    }
-
-    private fun showKeyboard(view: View) {
-        view.post {
-            getInputMethodManager(view).showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
-        }
-    }
-
-    private fun hideKeyboard(view: View) {
-        getInputMethodManager(view).hideSoftInputFromWindow(view.windowToken, 0)
-    }
-
-    private fun getInputMethodManager(view: View): InputMethodManager {
-        val context = view.context
-        return context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     }
 
     companion object {
