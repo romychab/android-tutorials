@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "a18f62275ba4a46630a594873c22a3de",
+    "identityHash": "18b9591b02972331d2bc6fa1248e5050",
     "entities": [
       {
         "tableName": "accounts",
@@ -107,7 +107,7 @@
             "notNull": true
           },
           {
-            "fieldPath": "isActive",
+            "fieldPath": "settings.isActive",
             "columnName": "is_active",
             "affinity": "INTEGER",
             "notNull": true
@@ -157,10 +157,15 @@
         ]
       }
     ],
-    "views": [],
+    "views": [
+      {
+        "viewName": "settings_view",
+        "createSql": "CREATE VIEW `${VIEW_NAME}` AS SELECT \n  accounts.id as account_id, \n  boxes.id as box_id,\n  ifnull(accounts_boxes_settings.is_active, 1) as is_active\nFROM accounts\nJOIN boxes\nLEFT JOIN accounts_boxes_settings\n  ON accounts_boxes_settings.account_id = accounts.id \n    AND accounts_boxes_settings.box_id = boxes.id"
+      }
+    ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a18f62275ba4a46630a594873c22a3de')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '18b9591b02972331d2bc6fa1248e5050')"
     ]
   }
 }

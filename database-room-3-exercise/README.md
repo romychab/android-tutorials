@@ -10,9 +10,9 @@
 
 - Topics:
   - Auto-migration
-  - Usage of onPostMigrate
+  - Usage of `onPostMigrate`
   - Manual migration
 
-Click [here](https://youtu.be/XXXXXXXXXXX) to watch the video tutorial.
+Click [here](https://youtu.be/LbsTQRDHiEg) to watch the video tutorial.
 
 You can also checkout an already implemented project in case of any problems [here](../database-room-3).

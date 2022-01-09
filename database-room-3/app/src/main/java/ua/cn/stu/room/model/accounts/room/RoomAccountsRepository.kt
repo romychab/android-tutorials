@@ -110,7 +110,7 @@ class RoomAccountsRepository(
         val saltBytes = securityUtils.stringToBytes(tuple.salt)
         val hashBytes = securityUtils.passwordToHash(password, saltBytes)
         val hashString = securityUtils.bytesToString(hashBytes)
-        password.fill('*') // good practice to clear passwords after usage
+        password.fill('*') // good practice is to clear passwords after usage
         if (tuple.hash != hashString) throw AuthException()
         return tuple.id
     }

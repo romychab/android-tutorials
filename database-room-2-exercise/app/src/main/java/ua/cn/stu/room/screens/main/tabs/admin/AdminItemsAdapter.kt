@@ -51,7 +51,7 @@ class AdminItemsAdapter(
 
     private fun prepareAttributesText(item: AdminTreeItem): CharSequence {
         // just a bit of HTML for easier implementation.
-        // please not it may work bad on devices with small screens
+        // please note it may work bad on devices with small screens
         val attributesText = item.attributes.entries.joinToString("<br>") {
             if (it.value.isNotBlank()) {
                 "<b>${it.key}</b>: ${it.value}"
