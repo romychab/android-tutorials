@@ -23,9 +23,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val layoutManager = LinearLayoutManager(this)
         adapter = UsersAdapter(object : UserActionListener {
-            override fun onUserMove(user: User, moveBy: Int) {
+            override fun onUserMove(user: User, moveBy: Int, userPosition: Int) {
                 usersService.moveUser(user, moveBy)
+                // the workaround below retains the scroll position of the RecyclerView
+                // when user moves the top visible item
+                val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+                if (userPosition == firstVisibleItemPosition || (userPosition == firstVisibleItemPosition + 1 && moveBy < 0)) {
+                    val v = binding.recyclerView.getChildAt(0)
+                    val offset = if (v == null) 0 else v.top - binding.recyclerView.paddingTop
+                    layoutManager.scrollToPositionWithOffset(firstVisibleItemPosition, offset)
+                }
             }
 
             override fun onUserDelete(user: User) {
@@ -41,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        val layoutManager = LinearLayoutManager(this)
+
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
         val itemAnimator = binding.recyclerView.itemAnimator

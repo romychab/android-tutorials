@@ -13,7 +13,7 @@ import ua.cn.stu.recyclerview.model.User
 
 interface UserActionListener {
 
-    fun onUserMove(user: User, moveBy: Int)
+    fun onUserMove(user: User, moveBy: Int, userPosition: Int)
 
     fun onUserDelete(user: User)
 
@@ -129,10 +129,10 @@ class UsersAdapter(
         popupMenu.setOnMenuItemClickListener {
             when (it.itemId) {
                 ID_MOVE_UP -> {
-                    actionListener.onUserMove(user, -1)
+                    actionListener.onUserMove(user, -1, position)
                 }
                 ID_MOVE_DOWN -> {
-                    actionListener.onUserMove(user, 1)
+                    actionListener.onUserMove(user, 1, position)
                 }
                 ID_REMOVE -> {
                     actionListener.onUserDelete(user)
