@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <layer-list
+            android:paddingMode="stack"
+            android:paddingStart="0dp"
+            android:paddingEnd="48dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp">
+
+            <item>
+                <shape android:shape="rectangle" >
+                    <corners android:radius="8dp" />
+                    <solid android:color="@color/input_background_disabled" />
+                </shape>
+            </item>
+
+            <item
+                android:drawable="@drawable/chevron_down_disabled"
+                android:gravity="end|center_vertical"
+                android:width="24dp"
+                android:height="24dp"
+                android:end="4dp" />
+
+        </layer-list>
+    </item>
+    <item>
+        <layer-list
+            android:paddingMode="stack"
+            android:paddingStart="0dp"
+            android:paddingEnd="48dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp">
+
+            <item>
+                <shape android:shape="rectangle" >
+                    <corners android:radius="8dp" />
+                    <solid android:color="@color/input_background" />
+                </shape>
+            </item>
+
+            <item
+                android:drawable="@drawable/chevron_down"
+                android:gravity="end|center_vertical"
+                android:width="24dp"
+                android:height="24dp"
+                android:end="4dp" />
+
+        </layer-list>
+    </item>
+</selector>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ua.cn.stu.navigation">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Navigation">
+
+        <activity
+            android:name=".activity.MenuActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.BoxActivity"
+            android:label="@string/box"
+            android:parentActivityName=".activity.BoxSelectionActivity" />
+
+        <activity
+            android:name=".activity.OptionsActivity"
+            android:label="@string/options"
+            android:parentActivityName=".activity.MenuActivity" />
+
+        <activity
+            android:name=".activity.BoxSelectionActivity"
+            android:label="@string/select_box"
+            android:parentActivityName=".activity.MenuActivity" />
+
+        <activity
+            android:name=".activity.AboutActivity"
+            android:label="@string/about"
+            android:parentActivityName=".activity.MenuActivity" />
+
+    </application>
+
+</manifest>
