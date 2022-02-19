@@ -41,7 +41,7 @@ class CheckableLayout(
         for (i in 0 until root.childCount) {
             val child = root.getChildAt(i)
             if (child is Checkable) return child
-            if (child is ViewGroup) return findCheckableChild(root)
+            if (child is ViewGroup) return findCheckableChild(child)
         }
         throw IllegalStateException("Can't find checkable child view")
     }
