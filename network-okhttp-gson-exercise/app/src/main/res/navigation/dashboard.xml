@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dashboard"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="ua.cn.stu.http.app.screens.main.tabs.dashboard.DashboardFragment"
+        android:label="@string/screen_dashboard"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_boxFragment"
+            app:destination="@id/boxFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boxFragment"
+        android:name="ua.cn.stu.http.app.screens.main.tabs.dashboard.BoxFragment"
+        android:label="@string/screen_box"
+        tools:layout="@layout/fragment_box">
+        <argument
+            android:name="boxId"
+            app:argType="long" />
+        <argument
+            android:name="colorName"
+            app:argType="string" />
+        <argument
+            android:name="colorValue"
+            app:argType="integer" />
+    </fragment>
+</navigation>
