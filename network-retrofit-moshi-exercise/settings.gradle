@@ -1,0 +1,2 @@
+rootProject.name = "Retrofit & Moshi"
+include ':app'
