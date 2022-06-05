@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Remote Mediator</string>
+
+    <string name="load_error">Oops, can\'t load data</string>
+    <string name="try_again">Try Again</string>
+    <string name="rocket_name">Rocket Name:</string>
+    <string name="launch_date">Launch Date:</string>
+    <string name="launch_site">Launch Site:</string>
+    <string name="choose_year">Choose Year:</string>
+    <string name="launch_year">Launch Year:</string>
+    <string name="all">ALL</string>
+
+    <string name="oops">Oops, error happened</string>
+</resources>
