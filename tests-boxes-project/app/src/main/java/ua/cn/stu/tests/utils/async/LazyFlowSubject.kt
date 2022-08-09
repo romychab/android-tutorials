@@ -18,7 +18,7 @@ class LazyFlowSubject<A : Any, T : Any>(
 ) {
 
     private val lazyListenersSubject =
-        lazyListenersFactory.createLazyListeners<A, T> { arg ->
+        lazyListenersFactory.createLazyListenersSubject<A, T> { arg ->
             runBlocking {
                 loader.invoke(arg)
             }

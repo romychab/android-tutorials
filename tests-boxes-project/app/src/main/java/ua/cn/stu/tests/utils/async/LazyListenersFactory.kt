@@ -8,7 +8,7 @@ interface LazyListenersFactory {
     /**
      * Create an instance of [LazyListenersSubject]
      */
-    fun <A : Any, T : Any> createLazyListeners(
+    fun <A : Any, T : Any> createLazyListenersSubject(
         // for real server it's better to use cached thread pool.
         loaderExecutor: ExecutorService = Executors.newSingleThreadExecutor(),
         // single thread pool to avoid multi-threading issues

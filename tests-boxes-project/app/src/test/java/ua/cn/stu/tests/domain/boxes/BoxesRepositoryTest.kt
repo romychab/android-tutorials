@@ -47,7 +47,7 @@ class BoxesRepositoryTest {
     @Before
     fun setUp() {
         every {
-            lazyFlowFactory.createLazyFlow<BoxesFilter, List<BoxAndSettings>>(any())
+            lazyFlowFactory.createLazyFlowSubject<BoxesFilter, List<BoxAndSettings>>(any())
         } returns lazyFlowSubject
 
         boxesRepository = BoxesRepository(
@@ -252,7 +252,7 @@ class BoxesRepositoryTest {
         val factory: LazyFlowFactory = mockk()
         val slot =
             slot<SuspendValueLoader<BoxesFilter, List<BoxAndSettings>>>()
-        every { factory.createLazyFlow(capture(slot)) } returns mockk()
+        every { factory.createLazyFlowSubject(capture(slot)) } returns mockk()
         BoxesRepository(accountsRepository, boxesSource, factory)
         return slot
     }

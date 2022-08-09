@@ -8,7 +8,7 @@ class DefaultLazyFlowFactory @Inject constructor(
     private val lazyListenersFactory: LazyListenersFactory
 ) : LazyFlowFactory {
 
-    override fun <A : Any, T : Any> createLazyFlow(
+    override fun <A : Any, T : Any> createLazyFlowSubject(
         loader: SuspendValueLoader<A, T>
     ): LazyFlowSubject<A, T> {
         return LazyFlowSubject(lazyListenersFactory, loader)

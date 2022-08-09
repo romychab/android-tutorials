@@ -18,7 +18,7 @@ class AccountsRepository @Inject constructor(
 ) {
 
     private val accountLazyFlowSubject: LazyFlowSubject<Unit, Account> =
-        lazyFlowFactory.createLazyFlow {
+        lazyFlowFactory.createLazyFlowSubject {
             doGetAccount()
         }
 

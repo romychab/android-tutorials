@@ -7,7 +7,7 @@ import javax.inject.Singleton
 @Singleton
 class DefaultLazyListenersFactory @Inject constructor() : LazyListenersFactory {
 
-    override fun <A : Any, T : Any> createLazyListeners(
+    override fun <A : Any, T : Any> createLazyListenersSubject(
         loaderExecutor: ExecutorService,
         handlerExecutor: ExecutorService,
         loader: ValueLoader<A, T>

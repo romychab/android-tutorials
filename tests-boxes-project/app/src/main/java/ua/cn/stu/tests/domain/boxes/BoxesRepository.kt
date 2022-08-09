@@ -26,7 +26,7 @@ class BoxesRepository @Inject constructor(
     private var accountResult: Result<Account> = Empty()
 
     private val boxesLazyFlowSubject: LazyFlowSubject<BoxesFilter, List<BoxAndSettings>> =
-        lazyFlowFactory.createLazyFlow { filter ->
+        lazyFlowFactory.createLazyFlowSubject { filter ->
             wrapBackendExceptions { boxesSource.getBoxes(filter) }
         }
 
