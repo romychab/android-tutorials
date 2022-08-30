@@ -44,7 +44,6 @@ class ResourceManager<R>(
      */
     fun setResource(resource: R) = synchronized(this) {
         if (destroyed) return
-        this.resource = resource
         var localConsumers: List<Consumer<R>>
         do {
             localConsumers = ArrayList(consumers)
@@ -53,6 +52,7 @@ class ResourceManager<R>(
                 processResource(consumer, resource)
             }
         } while (consumers.isNotEmpty())
+        this.resource = resource
     }
 
     /**
