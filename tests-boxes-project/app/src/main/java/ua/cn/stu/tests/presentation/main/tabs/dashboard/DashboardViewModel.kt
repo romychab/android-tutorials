@@ -27,7 +27,9 @@ class DashboardViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             boxesRepository.getBoxesAndSettings(BoxesFilter.ONLY_ACTIVE).collect { result ->
-                _boxes.value = result.map { list -> list.map { it.box } }
+                _boxes.value = result.map { list ->
+                    list.map { it.box }
+                }
             }
         }
     }

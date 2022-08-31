@@ -13,4 +13,6 @@ Checklist:
 - [x] Prepare the project
 - [x] Unit tests for data sources
 - [x] Unit tests for repositories
-- [ ] Unit tests for view models
+- [x] Unit tests for view models
+- [ ] Instrumented tests
+- [ ] Robolectric tests

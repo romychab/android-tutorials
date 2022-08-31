@@ -46,7 +46,7 @@ class LazyListenersSubject<A : Any, T : Any>(
      * the value loader is cancelled for this argument.
      */
     fun removeListener(argument: A, listener: ValueListener<T>) = handlerExecutor.execute {
-        listeners.removeAll { it.listener == listener && it.arg == argument }
+        listeners.removeAll { it.listener === listener && it.arg == argument }
         if (!listeners.any { it.arg == argument }) {
             cancel(argument)
         }
