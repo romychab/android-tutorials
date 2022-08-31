@@ -37,6 +37,8 @@ import kotlinx.coroutines.test.runTest
  * ```
  */
 @ExperimentalCoroutinesApi
+
+
 fun runFlowTest(
     testBody: suspend FlowTest.() -> Unit
 ) {
@@ -52,7 +54,8 @@ class FlowTest(
     private val scope: TestScope
 ) {
 
-    private val allJobs = mutableMapOf<Flow<*>, MutableList<Job>>()
+    private val allJobs =
+        mutableMapOf<Flow<*>, MutableList<Job>>()
 
     fun <T> Flow<T>.startCollecting(): List<T> {
         val list = mutableListOf<T>()
