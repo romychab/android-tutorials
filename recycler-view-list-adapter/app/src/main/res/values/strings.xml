@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Cats 😼</string>
+    <string name="cats">Cats: %1$d … %2$d</string>
+</resources>
