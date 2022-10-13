@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navCatsListFragment">
+    <fragment
+        android:id="@+id/navCatsListFragment"
+        android:name="ua.cn.stu.espresso.apps.navcomponent.NavCatsListFragment"
+        android:label="@string/fragment_cats_title"
+        tools:layout="@layout/fragment_cats" >
+
+        <action
+            android:id="@+id/action_navCatsListFragment_to_navCatDetailsFragment"
+            app:destination="@id/navCatDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navCatDetailsFragment"
+        android:name="ua.cn.stu.espresso.apps.navcomponent.NavCatDetailsFragment"
+        android:label="@string/fragment_cat_details"
+        tools:layout="@layout/fragment_cat_details" >
+        <argument
+            android:name="catId"
+            app:argType="long" />
+    </fragment>
+
+</navigation>
