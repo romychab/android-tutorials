@@ -17,7 +17,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.not
+import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import ua.cn.stu.espresso.R
@@ -50,6 +52,7 @@ class NavIntegrationTest : BaseTest() {
 
     private lateinit var scenario: ActivityScenario<NavComponentActivity>
 
+    @Before
     override fun setUp() {
         super.setUp()
         every { catsRepository.getCats() } returns catsFlow
@@ -60,6 +63,7 @@ class NavIntegrationTest : BaseTest() {
         scenario = ActivityScenario.launch(NavComponentActivity::class.java)
     }
 
+    @After
     fun tearDown() {
         scenario.close()
     }
