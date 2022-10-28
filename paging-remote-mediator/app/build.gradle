@@ -78,4 +78,5 @@ dependencies {
     // paging
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 
+    implementation "com.elveum:element-adapter:0.3"
 }

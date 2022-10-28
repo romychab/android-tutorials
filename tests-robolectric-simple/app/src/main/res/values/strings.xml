@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Robolectric</string>
+    <string name="cats">Cats: %1$d … %2$d</string>
+    <string name="go_back">Go Back</string>
+
+    <string name="activity_cats">Cats on Activity 😼</string>
+    <string name="activity_fragments">Cats on Fragments 😼</string>
+    <string name="activity_nav_component">Cats on NavComponent 😼</string>
+
+    <string name="activity_cat_details">Cat Details</string>
+
+    <string name="fragment_cats_title">Cats Fragment 😼</string>
+    <string name="fragment_cat_details">Cat Details</string>
+</resources>

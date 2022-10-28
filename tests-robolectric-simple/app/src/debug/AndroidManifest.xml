@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ua.cn.stu.robolectric">
+
+    <!--
+      Debug manifest contains the only one reference to the TestFragmentActivity
+      used for launching Hilt fragments in unit tests
+    -->
+
+    <application>
+        <activity android:name="ua.cn.stu.robolectric.testutils.fragments.TestFragmentActivity"
+            android:exported="false"/>
+    </application>
+
+</manifest>

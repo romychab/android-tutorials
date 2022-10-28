@@ -1,5 +1,7 @@
 package ua.cn.stu.remotemediator.ui
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -10,20 +12,23 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
+import com.elveum.elementadapter.context
+import com.elveum.elementadapter.setTintColor
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import ua.cn.stu.remotemediator.R
 import ua.cn.stu.remotemediator.databinding.ActivityMainBinding
-import ua.cn.stu.remotemediator.ui.base.DefaultLoadStateAdapter
-import ua.cn.stu.remotemediator.ui.base.TryAgainAction
-import ua.cn.stu.remotemediator.ui.base.observeEvent
-import ua.cn.stu.remotemediator.ui.base.simpleScan
+import ua.cn.stu.remotemediator.databinding.ItemLaunchBinding
+import ua.cn.stu.remotemediator.ui.base.*
 
 @FlowPreview
 @ExperimentalCoroutinesApi
@@ -33,15 +38,9 @@ class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<MainViewModel>()
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
-    private val adapter = LaunchesAdapter(object : LaunchesAdapter.Listener {
-        override fun onToggleSuccessFlag(launch: LaunchUiEntity) {
-            viewModel.toggleSuccessFlag(launch)
-        }
-
-        override fun onToggleCheckState(launch: LaunchUiEntity) {
-            viewModel.toggleCheckState(launch)
-        }
-    })
+    private val adapter by lazy {
+        launchesAdapter(viewModel)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -158,8 +157,7 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-
-    private fun getRefreshLoadStateFlow(adapter: LaunchesAdapter): Flow<LoadState> {
+    private fun getRefreshLoadStateFlow(adapter: PagingDataAdapter<*, *>): Flow<LoadState> {
         return adapter.loadStateFlow
             .map { it.refresh }
     }
