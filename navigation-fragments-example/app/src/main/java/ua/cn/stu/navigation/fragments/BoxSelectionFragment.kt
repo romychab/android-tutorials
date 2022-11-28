@@ -119,7 +119,7 @@ class BoxSelectionFragment : Fragment(), HasCustomTitle {
 
     inner class TimerHandler {
 
-        private lateinit var timer: CountDownTimer
+        private var timer: CountDownTimer? = null
 
         fun onCreate(savedInstanceState: Bundle?) {
             timerStartTimestamp = savedInstanceState?.getLong(KEY_START_TIMESTAMP)
@@ -149,11 +149,12 @@ class BoxSelectionFragment : Fragment(), HasCustomTitle {
                 }
             }
             updateTimerUi()
-            timer.start()
+            timer?.start()
         }
 
         fun onStop() {
-            timer.cancel()
+            timer?.cancel()
+            timer = null
         }
 
     }
