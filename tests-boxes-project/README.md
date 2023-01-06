@@ -14,5 +14,3 @@ Checklist:
 - [x] Unit tests for data sources
 - [x] Unit tests for repositories
 - [x] Unit tests for view models
-- [ ] Instrumented tests
-- [ ] Robolectric tests
