@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Multimodule - Dependencies"
+include ':app'
+include ':my-android-library'
+include ':my-kotlin-library'
+include ':ui-alerts-impl'
+include ':ui-alerts'

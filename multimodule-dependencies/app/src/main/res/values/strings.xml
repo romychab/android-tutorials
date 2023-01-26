@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Multimodule - Dependencies</string>
+    <string name="do_job">Do Job</string>
+    <string name="do_job_rx">Do Job Rx</string>
+</resources>
