@@ -31,11 +31,8 @@ android {
 }
 
 dependencies {
-
     implementation project(':my-kotlin-library')
-
     compileOnly "io.reactivex.rxjava3:rxjava:3.1.6"
 
     implementation project(':ui-alerts')
-
 }
