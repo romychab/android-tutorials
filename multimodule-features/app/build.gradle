@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'ua.cn.stu.multimodule'
+    compileSdk targetAndroidSdk
+
+    defaultConfig {
+        applicationId "ua.cn.stu.multimodule"
+        minSdk minAndroidSdk
+        targetSdk targetAndroidSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+hilt {
+    enableAggregatingTask = true
+}
+
+dependencies {
+    implementation Libs.Android.CoreKtx
+    implementation Libs.Android.AppCompat
+    implementation Libs.Android.ConstraintLayout
+    implementation Libs.Android.NavigationFragments
+
+    implementation Libs.Google.Material
+
+    implementation Libs.Google.Hilt
+    kapt Libs.Google.HiltCompiler
+
+    implementation project(Modules.Wiring)
+    implementation project(Modules.Core.CommonImpl)
+    implementation project(Modules.Core.Presentation)
+    implementation project(Modules.Data)
+    implementation project(Modules.Navigation)
+    implementation project(Modules.Features.SignIn)
+    implementation project(Modules.Features.SignUp)
+    implementation project(Modules.Features.Profile)
+    implementation project(Modules.Features.Cart)
+    implementation project(Modules.Features.Orders)
+    implementation project(Modules.Features.Catalog)
+}
+

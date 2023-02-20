@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catalog_category">Category: %1$s</string>
+    <string name="catalog_add_to_cart">Add to Cart</string>
+    <string name="catalog_in_cart">In Cart</string>
+    <string name="catalog_price">Price:</string>
+    <string name="catalog_categories">Categories:</string>
+    <string name="catalog_sort_by">Sort By:</string>
+    <string name="catalog_sort_order">Sort Order:</string>
+    <string name="catalog_all">All</string>
+    <string name="catalog_sort_name">Name</string>
+    <string name="catalog_sort_price">Price</string>
+    <string name="catalog_sort_order_asc">Ascending</string>
+    <string name="catalog_sort_order_desc">Descending</string>
+    <string name="catalog_action_apply">Apply</string>
+    <string name="catalog_action_cancel">Cancel</string>
+    <string name="catalog_apply_filter_title">Apply filter</string>
+    <string name="catalog_apply_filter_message">You have changed filter. Would you like to apply it?</string>
+</resources>

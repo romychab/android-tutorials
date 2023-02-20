@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/core_theme_item_background"
+    tools:ignore="ContentDescription">
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/productImageView"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="6dp"
+        tools:background="#ababab"
+        app:layout_goneMarginStart="0dp"
+        app:layout_constraintStart_toEndOf="@id/checkBox"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        style="@style/ListItemTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        tools:text="Product Name"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/productImageView"
+        app:layout_constraintBottom_toTopOf="@id/originPriceTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/countContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView">
+
+        <ImageView
+            android:id="@+id/decrementImageView"
+            style="@style/ClickableIcon"
+            app:tint="@color/action"
+            android:src="@drawable/ic_minus" />
+
+        <TextView
+            android:id="@+id/quantityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="42dp"
+            android:layout_gravity="center_vertical"
+            android:lines="1"
+            android:ellipsize="end"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="999"/>
+
+        <ImageView
+            android:id="@+id/incrementImageView"
+            style="@style/ClickableIcon"
+            app:tint="@color/action"
+            android:src="@drawable/ic_plus" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/originPriceTextView"
+        style="@style/ListItemPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/core_theme_diagonal_line"
+        app:layout_constraintHorizontal_bias="0"
+        tools:text="$101.99"
+        app:layout_constraintWidth_default="wrap"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintEnd_toStartOf="@id/countContainer"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        app:layout_constraintBottom_toTopOf="@id/priceWithDiscountTextView"/>
+
+    <TextView
+        android:id="@+id/priceWithDiscountTextView"
+        style="@style/ListItemPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/discount_text"
+        tools:text="$90.99"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintEnd_toStartOf="@id/countContainer"
+        app:layout_constraintTop_toBottomOf="@id/originPriceTextView"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="core_theme_big_width">260dp</dimen>
+    <dimen name="core_theme_medium_space">12dp</dimen>
+    <dimen name="core_theme_large_space">30dp</dimen>
+
+</resources>

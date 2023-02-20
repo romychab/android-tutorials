@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="core_presentation_result_container_padding">8dp</dimen>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signup_field_email">Email</string>
+    <string name="signup_field_username">Username</string>
+    <string name="signup_field_password">Password</string>
+    <string name="signup_field_repeat_password">Repeat Password</string>
+    <string name="signup_action_create_account">Create Account</string>
+    <string name="signup_account_created">Account has been created successfully</string>
+    <string name="signup_account_exists">Account with such email already exists</string>
+    <string name="signup_empty_field">Field is empty</string>
+    <string name="signup_password_mismatch">Passwords mismatch</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="orders_congrats">Congratulations</string>
+    <string name="orders_order_created">A new order has been created successfully.</string>
+    <string name="orders_create_order_ok">Ok</string>
+    <string name="orders_order_details">Order Details</string>
+    <string name="orders_first_name">First Name</string>
+    <string name="orders_last_name">Last Name</string>
+    <string name="orders_address">Address</string>
+    <string name="orders_additional_comment">Additional Comment</string>
+    <string name="orders_total_price">Total Price:</string>
+    <string name="orders_recipient_info">Recipient Info</string>
+    <string name="orders_empty_field">Field is empty</string>
+    <string name="orders_item_text">%1$s x%2$d</string>
+    <string name="orders_cancel">Cancel</string>
+    <string name="orders_order_id"># %1$s</string>
+    <string name="orders_created_at"><![CDATA[
+        <font color=\'black\'><b>Created At: </b></font> %1$s
+    ]]></string>
+    <string name="orders_recipient"><![CDATA[
+        <font color=\'black\'><b>Recipient: </b></font> %1$s
+    ]]></string>
+    <string name="orders_create_order">Create Order</string>
+</resources>

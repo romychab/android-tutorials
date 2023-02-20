@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ua.cn.stu.multimodule.core.presentation.views.ResultView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="16dp"
+            tools:context="ua.cn.stu.multimodule.catalog.presentation.details.ProductDetailsFragment">
+
+            <ImageView
+                android:id="@+id/productImageView"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="12dp"
+                tools:background="#dedede"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/productTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:ellipsize="end"
+                android:lines="1"
+                android:layout_marginTop="8dp"
+                tools:text="Laptop" />
+
+            <TextView
+                android:id="@+id/detailsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                tools:text="Product description"/>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/addToCartProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+
+                <Button
+                    android:id="@+id/addToCartButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center"
+                    android:text="@string/catalog_add_to_cart"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</ua.cn.stu.multimodule.core.presentation.views.ResultView>

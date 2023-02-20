@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cart_create_order">Create Order</string>
+    <string name="cart_total_price">Total Price: </string>
+    <string name="cart_action_delete">Delete</string>
+    <string name="cart_action_details">Details</string>
+    <string name="cart_action_cancel">Cancel</string>
+    <string name="cart_action_edit">Edit</string>
+    <string name="cart_action_save">Save</string>
+    <string name="cart_edit_quantity">Edit Quantity</string>
+    <string name="cart_quantity">Quantity</string>
+    <string name="cart_invalid_quantity">Invalid quantity value</string>
+    <string name="cart_quantity_out_of_range">Quantity should be greater than 0 and less than max available quantity</string>
+    <string name="cart_max_quantity">Max Quantity Available: %1$d</string>
+</resources>

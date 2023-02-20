@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Feature Modules</string>
+
+    <string name="tab_catalog">Catalog</string>
+    <string name="tab_orders">Orders</string>
+    <string name="tab_profile">Profile</string>
+
+    <string name="title_catalog">Product Catalog</string>
+    <string name="title_product_details">Details</string>
+    <string name="title_orders">My Orders</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_sign_in">Sign In</string>
+    <string name="title_sign_up">Sign Up</string>
+    <string name="title_filter">Filter</string>
+    <string name="title_edit_profile">Edit Profile</string>
+    <string name="title_edit_quantity">Edit Quantity</string>
+    <string name="title_create_order">Create Order</string>
+    <string name="title_order_details">Order Details</string>
+</resources>

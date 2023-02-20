@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ua.cn.stu.multimodule.core.presentation.views.ResultView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ua.cn.stu.multimodule.catalog.presentation.filter.CatalogFilterFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filterRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</ua.cn.stu.multimodule.core.presentation.views.ResultView>

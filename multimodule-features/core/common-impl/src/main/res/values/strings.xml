@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="core_common_session_expired">Session has been expired</string>
+    <string name="core_common_error_connection">No internet connection</string>
+    <string name="core_common_error_service">Remote service error</string>
+    <string name="core_common_error_storage">Local storage error</string>
+    <string name="core_common_error_timeout">Operation timeout</string>
+    <string name="core_common_error_title">Error</string>
+    <string name="core_common_error_message">Unknown internal error.</string>
+    <string name="core_common_action_ok">OK</string>
+
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/core_theme_item_background"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/productImageView"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:scaleType="centerCrop"
+        tools:background="#ababab"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        style="@style/ListItemTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        tools:text="Product Name"
+        app:layout_constraintStart_toEndOf="@id/productImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/addToCartImageView"/>
+
+    <TextView
+        android:id="@+id/categoryHintTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/catalog_category"
+        android:textColor="@color/black"
+        android:layout_marginTop="4dp"
+        tools:text="Category: Notebooks"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintEnd_toStartOf="@id/addToCartImageView" />
+
+    <TextView
+        android:id="@+id/shortDescriptionTextView"
+        style="@style/ListItemDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        tools:text="This is a product description very long text example"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintEnd_toEndOf="@id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@id/categoryHintTextView"/>
+
+    <ImageView
+        android:id="@+id/addToCartImageView"
+        style="@style/ClickableIcon"
+        android:src="@drawable/ic_add_to_cart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/originPriceTextView"
+        style="@style/ListItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/core_theme_diagonal_line"
+        tools:text="$56.99"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@id/shortDescriptionTextView"/>
+
+    <TextView
+        android:id="@+id/priceWithDiscountTextView"
+        style="@style/ListItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/discount_text"
+        android:layout_marginStart="12dp"
+        app:layout_goneMarginStart="0dp"
+        tools:text="$40.99"
+        app:layout_constraintStart_toEndOf="@id/originPriceTextView"
+        app:layout_constraintTop_toBottomOf="@id/shortDescriptionTextView"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

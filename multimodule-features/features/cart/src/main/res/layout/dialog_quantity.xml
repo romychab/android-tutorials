@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ua.cn.stu.multimodule.core.presentation.views.ResultView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dialogRoot"
+    android:paddingBottom="8dp"
+    tools:context="ua.cn.stu.multimodule.cart.presentation.quantity.EditQuantityDialogFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/quantityTextInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="18dp"
+            android:hint="@string/cart_quantity">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/quantityEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:inputType="number"
+                android:imeOptions="actionDone"
+                tools:text="123"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/hintTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/hint"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="6dp"
+            tools:text="Max quantity: 99"/>
+
+    </LinearLayout>
+
+</ua.cn.stu.multimodule.core.presentation.views.ResultView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="core_presentation_general_error_title">Error</string>
+    <string name="core_presentation_general_error">Unknown internal error</string>
+    <string name="core_presentation_general_error_ok">Ok</string>
+    <string name="core_presentation_try_again">Try Again</string>
+    <string name="core_presentation_logout">Logout</string>
+
+</resources>

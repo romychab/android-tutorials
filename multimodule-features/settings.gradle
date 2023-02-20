@@ -1,0 +1,29 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Feature Modules"
+include ':app'
+include ':features:sign-in'
+include ':features:sign-up'
+include ':features:profile'
+include ':features:catalog'
+include ':features:cart'
+include ':features:orders'
+include ':core:common'
+include ':core:presentation'
+include ':core:common-impl'
+include ':core:theme'
+include ':data'
+include ':navigation'
+include ':wiring'

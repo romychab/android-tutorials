@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="profile_title_hint">Profile Info</string>
+    <string name="profile_field_email">Email</string>
+    <string name="profile_field_username">Username</string>
+    <string name="profile_field_created_at">Created At</string>
+    <string name="profile_action_edit_profile">Edit Profile</string>
+    <string name="profile_action_logout">Logout</string>
+    <string name="profile_edit_profile_description">Right now you can edit only username</string>
+    <string name="profile_action_save">Save</string>
+    <string name="profile_action_cancel">Cancel</string>
+    <string name="profile_empty_username">Username should not be empty</string>
+</resources>

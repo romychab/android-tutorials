@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ua.cn.stu.multimodule.core.presentation.views.ResultView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="ua.cn.stu.multimodule.cart.presentation.cartlist.CartListFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/flow"/>
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:flow_horizontalBias="0"
+            app:flow_horizontalStyle="packed"
+            app:flow_horizontalGap="6dp"
+            app:flow_wrapMode="aligned"
+            app:layout_constraintBottom_toTopOf="@id/createOrderButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:constraint_referenced_ids="totalPriceTextView,totalPriceValueTextView,totalPriceWithDiscountValueTextView"/>
+        
+        <TextView
+            android:id="@+id/totalPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cart_total_price"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/totalPriceValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="99.99$" />
+        
+        <TextView
+            android:id="@+id/totalPriceWithDiscountValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/discount_text"
+            android:textStyle="bold"
+            tools:text="89.99$" />
+        
+        <Button
+            android:id="@+id/createOrderButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cart_create_order"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/actionsContainer"/>
+
+        <LinearLayout
+            android:id="@+id/actionsContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="3dp"
+            android:background="@color/white"
+            android:baselineAligned="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include
+                android:id="@+id/showDetailsAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/item_cart_action"
+                android:layout_weight="1" />
+
+            <include
+                android:id="@+id/deleteAction"
+                layout="@layout/item_cart_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <include
+                android:id="@+id/editQuantityAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/item_cart_action"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ua.cn.stu.multimodule.core.presentation.views.ResultView>
